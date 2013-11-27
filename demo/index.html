@@ -1,0 +1,39 @@
+<html>	
+<head>
+	<title>jQuery Word Censor Example</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../jquery.word.censor.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$(".singer").censor({
+				badWords : 'Justin Bieber'
+			});
+
+			$(".movie").censor({
+				badWords : ['Twilight', 'Vampire']
+			});
+
+		});
+	</script>
+</head>
+
+<body>
+
+<div class="singer">
+	<h1>Singer</h1>
+	<p>Justin Bieber is a musician</p>
+</div>
+
+<div class="movie">
+	<h1>Movies</h1>
+	<ul>
+		<li>Godfather I</li>
+		<li>Pirates Of The Caribian</li>
+		<li>Twilight</li>
+		<li>Mission Impossible</li>
+		<li>Vampire</li>
+	</ul>
+</div>
+
+</body>
+</html>
