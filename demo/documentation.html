@@ -1,0 +1,154 @@
+<html>	
+<head>
+	<title>jQuery Word Censor Example</title>
+	 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+	<script src="../jquery.word.censor.min.js"></script>
+</head>
+<style>
+	body {
+	    font-family: verdana;
+	    font-size: 18px;
+	}
+	.example {
+	    background: none repeat scroll 0 0 #F1F1F1;
+	    border: 3px solid #CCCCCC;
+	    float: left;
+	    margin: 20px 10px;
+	    padding: 5px;
+	    width: 80%;
+	}
+	.code {
+	    background: none repeat scroll 0 0 #CCCCCC;
+	    font-size: 15px;
+	}
+	.output {
+	}
+</style>
+<body>
+
+<div class="example">
+	<h1> Example : Censor Single Word </h1>
+	<hr />
+	<h2> Code : </h2>
+	<xmp class='code'> 
+
+		<div class="actress">
+			<h3>Actress</h3>
+			<ul>
+				<li>Nicole Kidman</li>
+				<li>Kristen Stewart</li>
+				<li>Jodie Foster</li>
+				<li>Catherine Zeta Jones</li>
+			</ul>
+		</div>
+		<script>
+		$(".actress").censor({
+			badWords : 'Kristen Stewart'
+		});
+		</script>
+
+	</xmp>
+
+	<div class="output">
+	<h2> Output : </h2>
+		<div class="actress">
+			<h3>Actress</h3>
+			<ul>
+				<li>Nicole Kidman</li>
+				<li>Kristen Stewart</li>
+				<li>Jodie Foster</li>
+				<li>Catherine Zeta Jones</li>
+			</ul>
+		</div>
+		<script>
+		$(".actress").censor({
+			badWords : 'Kristen Stewart'
+		});
+		</script>
+	</div>
+</div>
+
+<div class="example">
+	<h1> Example : Censor Multple Words </h1>
+	<hr />
+	<h2> Code : </h2>
+	<xmp class='code'> 
+
+		<div class="actress">
+			<h3>Movies</h3>
+			<ul>
+				<li>Godfather I</li>
+				<li>Pirates Of The Caribian</li>
+				<li>Twilight</li>
+				<li>Mission Impossible</li>
+				<li>Vampire</li>
+			</ul>
+		</div>
+		<script>
+		$(".movie").censor({
+			badWords : ['vampire', 'twilight', 'aaa']
+		});
+		</script>
+
+	</xmp>
+
+	<div class="output">
+	<h2> Output : </h2>
+		<div class="movie">
+			<h3>Movies</h3>
+			<ul>
+				<li>Godfather I</li>
+				<li>Pirates Of The Caribian</li>
+				<li>Twilight</li>
+				<li>Mission Impossible</li>
+				<li>Vampire</li>
+			</ul>
+		</div>
+		<script>
+		$(".movie").censor({
+			badWords : ['vampire', 'twilight', 'aaa']
+		});
+		</script>
+	</div>
+</div>
+
+<div class="example">
+
+	<h1> Example : Censor with your custom censored word </h1>
+	<hr />
+
+	<h2> Code : </h2>
+	<xmp class='code'> 
+		<div class="singer">
+			<h3>Singers</h3>
+			<p>Michael Jackson, Bryan Adams, Justin Bieber, Dido</p>
+		</div>
+		<script>
+		$(".singer").censor({
+			badWords : 'Justin Bieber',
+			replaceWord : '<span style="color:#ff0000;">--CENSORED--</span>'
+		});
+		</script>
+
+	</xmp>
+
+	<div class="output">
+		<h2> Output : </h2>
+		<div class="singer">
+				<h3>Singers</h3>
+				<p>Michael Jackson, Bryan Adams, Justin Bieber, Dido</p>
+			</div>
+		<script>
+		$(".singer").censor({
+			badWords : 'Justin Bieber',
+			replaceWord : '<span style="color:#ff0000;">--CENSORED--</span>'
+		});
+		</script>
+	</div>
+</div>
+
+
+</div>
+</body>
+</html>
